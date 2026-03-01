@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "JITRACK - JIRA Time Tracker",
+  "version": "2.0.0",
+  "description": "Export JIRA tasks to JITRACK time tracker",
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://*/browse/*",
+    "https://*/browse/*",
+    "http://localhost:8765/*",
+    "http://localhost:8766/*",
+    "http://localhost:8767/*",
+    "http://localhost:8768/*",
+    "http://localhost:8769/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/browse/*",
+        "https://*/browse/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*.png", "logo.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
